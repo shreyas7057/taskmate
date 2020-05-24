@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>TaskMate-Edit {{ task_obj.task }}</title>
+{% endblock title %}
+
+
+{% block content %}
+
+<br>
+{% if task_obj.manager == request.user %}
+<form method="POST" class="row">{% csrf_token %}
+    <input type="text" name="task" class="form-control col-lg-6" value="{{ task_obj.task }}" placeholder="{{ task_obj.task }}">
+    <input type="hidden" name="done" value="{{ task_obj.done }}">
+    <button type="submit" class="btn btn-primary col-lg-4">Edit Task</button>
+</form>
+{% else %}
+<h1>You are not the user of this task</h1>
+{% endif %}
+{% endblock content %}

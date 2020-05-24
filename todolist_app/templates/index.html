@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>TaskMate-Index</title>
+{% endblock title %}
+
+{% block content %}
+    <br>
+    <div class="row mt-5">
+        <div class="col-lg-4">
+            <img src="{% static 'images/note1.jpg' %}" width="360" height="250">
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static 'images/note2.jpg' %}" width="360" height="250">
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static 'images/note3.jpg' %}" width="360" height="250">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-10 offset-md-1">
+        <center><p class="h1">This is note taking you can write a note here</p></center>
+        <center><p class="h2">This is note taking you can write a note here</p></center>
+        <center><p class="h5">This is note taking you can write a note here</p></center>
+        </div>
+    </div>
+
+    <center><a href="{% url 'todolist' %}"><button type="button" class="btn btn-primary btn-lg mt-3">Let's get Started</button></a></center>
+
+    {% endblock content %}
